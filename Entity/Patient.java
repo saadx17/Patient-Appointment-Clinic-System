@@ -4,8 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.swing.*;
 
-public class Patient 
-{
+public class Patient {
     private String name;
     private String phone;
     private String problem;
@@ -15,8 +14,7 @@ public class Patient
     private File file;
     private FileWriter fwriter;
 
-    public Patient(String name, String phone, int age, boolean isMale, String problem, String doctor) 
-    {
+    public Patient(String name, String phone, int age, boolean isMale, String problem, String doctor) {
         this.name = name;
         this.phone = phone;
         this.age = age;
@@ -25,10 +23,8 @@ public class Patient
         this.doctor = doctor;
     }
 
-    public void insertAppointment() 
-    {
-        try 
-        {
+    public void insertAppointment() {
+        try {
             file = new File("Data/appointments.txt");
             if (!file.exists()) {
                 file.getParentFile().mkdirs(); 
@@ -58,8 +54,7 @@ public class Patient
             fwriter.flush(); 
             fwriter.close(); 
         } 
-        catch(IOException ioe) 
-        {
+        catch(IOException ioe) {
             ioe.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error writing to file!");
         }

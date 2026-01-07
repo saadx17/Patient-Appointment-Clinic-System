@@ -5,8 +5,7 @@ import java.awt.event.*;
 import java.io.*;
 import javax.swing.*;
 
-public class ClinicFrame extends JFrame implements ActionListener 
-{
+public class ClinicFrame extends JFrame implements ActionListener {
     private JPanel panel;
     private JLabel labelTitle, lName, lPhone, lAge, lGender, lProblem, lDoctor;
     private JTextField tfName, tfPhone, tfAge;
@@ -17,8 +16,7 @@ public class ClinicFrame extends JFrame implements ActionListener
     private JScrollPane scroll1, scroll2;
     private JButton btnSubmit, btnClear, btnExit;
 
-    public ClinicFrame() 
-    {
+    public ClinicFrame() {
         super("Clinic Management System");
         super.setBounds(200, 50, 850, 800);
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -72,19 +70,16 @@ public class ClinicFrame extends JFrame implements ActionListener
         updateDisplay();
     }
 
-    public void actionPerformed(ActionEvent ae) 
-    {
+    public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == btnExit) System.exit(0);
         
-        if (ae.getSource() == btnClear) 
-        {
+        if (ae.getSource() == btnClear) {
             tfName.setText(""); tfPhone.setText(""); tfAge.setText("");
             taProblem.setText(""); cbDoctor.setSelectedIndex(0);
             bgGender.clearSelection();
         }
 
-        if (ae.getSource() == btnSubmit) 
-        {
+        if (ae.getSource() == btnSubmit) {
             try 
             {
                 String name = tfName.getText();
@@ -94,29 +89,24 @@ public class ClinicFrame extends JFrame implements ActionListener
                 String doc = cbDoctor.getSelectedItem().toString();
                 boolean isMale = rbMale.isSelected();
 
-                if (name.isEmpty() || phone.isEmpty() || problem.isEmpty() || doc.isEmpty() || (!rbMale.isSelected() && !rbFemale.isSelected())) 
-                {
+                if (name.isEmpty() || phone.isEmpty() || problem.isEmpty() || doc.isEmpty() || (!rbMale.isSelected() && !rbFemale.isSelected())) {
                     JOptionPane.showMessageDialog(this, "Please fill all fields!");
                 } 
-                else 
-                {
+                else {
                     Patient p = new Patient(name, phone, age, isMale, problem, doc); 
                     p.insertAppointment();
                     JOptionPane.showMessageDialog(this, "Appointment Saved!");
                     updateDisplay();
                 }
             } 
-            catch (NumberFormatException e) 
-            {
+            catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(this, "Please enter a valid number for Age!");
             }
         }
     }
 
-    private void updateDisplay() 
-    {
-        try 
-        {
+    private void updateDisplay() {
+        try {
             File file = new File("Data/appointments.txt");
             if (file.exists()) 
             {
