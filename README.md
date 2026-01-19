@@ -24,4 +24,4 @@ This is a simple Java-based Patient Appointment Clinic System with OOP. It allow
 - Run the application and use the GUI to manage patient appointments.
 - Appointment data is saved in `Data/appointments.txt`.
 
-## I'm our
+## I'm out!
