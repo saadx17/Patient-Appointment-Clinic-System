@@ -1,12 +1,3 @@
-Appointment Date: 11:03 AM, 06/01/2026
-========================================================
-Name: Abdullah Al Saad
-Phone: 01741736862
-Age: 25
-Gender: Male
-Assigned Doctor: Dr. Ahmed (Medicine)
-Health Problem: Fever, Cold, Cough etc.
---------------------------------------------------------
 Appointment Date: 11:00 AM, 06/01/2026
 ========================================================
 Name: Rifat Ahsan Pulok
